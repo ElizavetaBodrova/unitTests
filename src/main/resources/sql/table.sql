@@ -1,0 +1,11 @@
+CREATE sequence Person_ID_SEQ
+    MINVALUE 1
+    MAXVALUE 999999999999999999999999999
+    START WITH 1
+    INCREMENT BY 1;
+
+CREATE TABLE person (
+    id Number(10,0) DEFAULT Person_ID_SEQ.nextval NOT NULL PRIMARY KEY ,
+    name varchar(25));
+
+
