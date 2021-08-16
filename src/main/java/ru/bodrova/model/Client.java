@@ -1,13 +1,9 @@
 package ru.bodrova.model;
 
-import javax.persistence.*;
 import java.math.BigDecimal;
 
-@Entity
 public class Client {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id")
+
     private Long id;
     private Long account;
     private BigDecimal balance;

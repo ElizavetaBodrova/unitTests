@@ -8,7 +8,7 @@ import ru.bodrova.service.ClientService;
 
 import java.math.BigDecimal;
 
-@Controller
+@RestController
 @RequestMapping("/client")
 public class ClientController {
     private final ClientService clientService;
@@ -17,24 +17,19 @@ public class ClientController {
         this.clientService = clientService;
     }
 
-    @RequestMapping(value="/create", method=RequestMethod.POST,
-    produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseBody
-    public Long createAccount(@RequestParam Client client) {
-        return ;
+    @PostMapping(value="/create", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Long createAccount(@RequestBody Client client) {
+        return clientService.createAccount(client);
     }
 
     @GetMapping("/balance/{id}")
-    @ResponseBody
-    public Long getBalance(@PathVariable String id) {
-        return ;
+    public BigDecimal getBalance(@PathVariable String id) {
+        return clientService.getBalance(Long.parseLong(id));
     }
 
-    @RequestMapping(value="/find/{fio}", method=RequestMethod.POST,
-            produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseBody
-    public Client getClientByFio(@PathVariable String fio) {
-        return ;
+    @PostMapping(value="/find", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Client getClientByFio(@RequestParam("fio") String fio) {
+        return clientService.getClientByFio(fio);
     }
 
 }
