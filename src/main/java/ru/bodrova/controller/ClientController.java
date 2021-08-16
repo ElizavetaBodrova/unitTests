@@ -1,11 +1,12 @@
 package ru.bodrova.controller;
 
 import org.springframework.http.MediaType;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import ru.bodrova.model.Client;
 import ru.bodrova.service.ClientService;
+
+import java.math.BigDecimal;
 
 @Controller
 @RequestMapping("/client")

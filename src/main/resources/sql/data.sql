@@ -1,7 +1,12 @@
-insert
-into app.PERSON( name)
-values ('user1');
-insert into app.person(id, name)
-values (app.person_ID_SEQ.nextval, 'user2');
-insert into person(id, name)
-values (person_ID_SEQ.nextval, 'user3');
+INSERT INTO CLIENT(ID, ACCOUNT, FIO, BALANCE)
+VALUES (seq_client.nextval, 123123123, 'Иванов', 9999);
+INSERT INTO CLIENT(ID, ACCOUNT, FIO, BALANCE)
+VALUES (seq_client.nextval, 123123124, 'Петров', 9998);
+INSERT INTO CLIENT(ID, ACCOUNT, FIO, BALANCE)
+VALUES (seq_client.nextval, 123123125, 'Геральт', 9997);
+INSERT INTO CLIENT(ID, ACCOUNT, FIO, BALANCE)
+VALUES (seq_client.nextval, 123123126, 'Лютик', 9996);
+INSERT INTO CLIENT(ID, ACCOUNT, FIO, BALANCE)
+VALUES (seq_client.nextval, 123123127, 'Весмир', 9995);
+INSERT INTO CLIENT(ID, ACCOUNT, FIO, BALANCE)
+VALUES (seq_client.nextval, 123123128, 'Йеннифер', 9994);
